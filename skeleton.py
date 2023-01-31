@@ -66,7 +66,15 @@ def opponents_move(env):
    env.change_player() # change back to student before returning
    return state, reward, done
 
+def score(board, col):
+   
+   return 0
+
 def student_move():
+
+   return 0
+
+def student_move_random():
    """
    TODO: Implement your min-max alpha-beta pruning algorithm here.
    Give it whatever input arguments you think are necessary
@@ -119,7 +127,7 @@ def play_game(vs_server = False):
    done = False
    while not done:
       # Select your move
-      stmove = student_move() # TODO: change input here
+      stmove = student_move_random() # TODO: change input here
 
       # make both student and bot/server moves
       if vs_server:
