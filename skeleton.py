@@ -66,8 +66,31 @@ def opponents_move(env):
    env.change_player() # change back to student before returning
    return state, reward, done
 
+def alpha_beta():
+   return
+
+def nbr_in_a_row(list: list, piece: int):
+   longest = 0
+   temp = 0
+   for i in range(len(list)):
+      inarow = 0
+      if list[i] == piece:
+         temp += 1
+      else:
+         longest = max(longest, temp)
+         temp = 0
+
+   return longest
+
+def score_line(line: list):
+   score = 0
+
+   return score
+
+
 def score(board, col):
-   
+   score = 0
+
    return 0
 
 def student_move():
@@ -127,7 +150,7 @@ def play_game(vs_server = False):
    done = False
    while not done:
       # Select your move
-      stmove = student_move_random() # TODO: change input here
+      stmove = student_move() # TODO: change input here
 
       # make both student and bot/server moves
       if vs_server:
@@ -151,6 +174,7 @@ def play_game(vs_server = False):
          student_gets_move = True # student only skips move first turn if bot starts
 
          # print or render state here if you like
+         # env.render()
 
          # select and make a move for the opponent, returned reward from students view
          if not done:
