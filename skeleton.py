@@ -13,6 +13,8 @@ ROW_LEN = 7
 COL_LEN = 6
 CONNECT_LEN = 4
 
+SEARCH_DEPTH = 4
+
 #SERVER_ADRESS = "http://localhost:8000/"
 SERVER_ADRESS = "https://vilde.cs.lth.se/edap01-4inarow/"
 API_KEY = 'nyckel'
@@ -63,7 +65,7 @@ def opponents_move(env):
    # that way you get way more interesting games, and you can see if starting
    # is enough to guarrantee a win
    action = random.choice(list(avmoves))
-
+   # action = get_move(True)
    state, reward, done, _ = env.step(action)
    if done:
       if reward == 1: # reward is always in current players view
@@ -71,18 +73,18 @@ def opponents_move(env):
    env.change_player() # change back to student before returning
    return state, reward, done
 
-def alpha_beta(ab_board: ConnectFourEnv, depth: int, alpha: int, beta: int, maximizing_player: bool) -> int:
+def alpha_beta(ab_env: ConnectFourEnv, depth: int, alpha: int, beta: int, maximizing_player: bool) -> int:
    """
    maximizing_player: True = player, False = comp
    """
-   available_moves = list(ab_board.available_moves())
-   random.shuffle(available_moves)
-   if depth == 0 or ab_board.is_win_state():
-      return score(ab_board.board)
+   available_moves = list(ab_env.available_moves())
+   # random.shuffle(available_moves)
+   if depth == 0 or ab_env.is_win_state() or len(available_moves) == 0:
+      return score(ab_env.board)
    if maximizing_player:
       value = -sys.maxsize
       for move in available_moves:
-         child = copy.deepcopy(env)
+         child = copy.deepcopy(ab_env)
          child.change_player()
          child.step(move)
          value = max(value, alpha_beta(child, depth - 1, alpha, beta, False))
@@ -93,7 +95,7 @@ def alpha_beta(ab_board: ConnectFourEnv, depth: int, alpha: int, beta: int, maxi
    else:
       value = sys.maxsize
       for move in available_moves:
-         child = copy.deepcopy(env)
+         child = copy.deepcopy(ab_env)
          child.change_player()
          child.step(move)
          value = min(value, alpha_beta(child, depth - 1, alpha, beta, True))
@@ -101,6 +103,45 @@ def alpha_beta(ab_board: ConnectFourEnv, depth: int, alpha: int, beta: int, maxi
             break
          beta = min(beta, value)
       return value
+
+# def alpha_beta(ab_env: ConnectFourEnv, depth: int, alpha: int, beta: int, maximizing_player: bool):
+#    """
+#    maximizing_player: True = player, False = comp
+#    """
+#    available_moves = list(ab_env.available_moves())
+#    # random.shuffle(available_moves)
+#    if depth == 0 or ab_env.is_win_state() or len(available_moves) == 0:
+#       return None, score(ab_env.board)
+#    if maximizing_player:
+#       value = -sys.maxsize
+#       move = available_moves[0]
+#       for m in available_moves:
+#          child = copy.deepcopy(ab_env)
+#          child.change_player()
+#          child.step(m)
+#          new_value = alpha_beta(child, depth - 1, alpha, beta, False)[1]
+#          if new_value > value:
+#             value = new_value
+#             move = m
+#          alpha = max(alpha, value)
+#          if value >= beta:
+#             break
+#       return move, value
+#    else:
+#       value = sys.maxsize
+#       move = available_moves[0]
+#       for m in available_moves:
+#          child = copy.deepcopy(ab_env)
+#          child.change_player()
+#          child.step(m)
+#          new_value = alpha_beta(child, depth - 1, alpha, beta, True)[1]
+#          if new_value < value:
+#             value = new_value
+#             move = m
+#          beta = min(beta, value)
+#          if value <= alpha:
+#             break
+#       return move, value
 
 # obselete for now
 def nbr_in_a_row(list: list, piece: int):
@@ -151,7 +192,7 @@ def score_line(line: list):
    if opponent_pieces == 3 and free_slots == 1:
       return -99
    if opponent_pieces == 4:
-      return -sys.maxsize + 1
+      return -sys.maxsize
    # if one case is missed in code
    
    # print("case missed")
@@ -186,33 +227,23 @@ def score(board):
    # print("In score fun score = ", score)
    return score
 
-def student_move():
+def get_move(player: bool):
    available_moves = env.available_moves()
-   # print("Available moves: ", available_moves)
-   # list = [-sys.maxsize]* 7
    best_score = -sys.maxsize
-   best_move = 3
    for move in available_moves:
       env_copy = copy.deepcopy(env)
       env_copy.step(move)
-      score = alpha_beta(env_copy, 3, -sys.maxsize, sys.maxsize, True)
+      # Search depth -1 due to one layer search in this function
+      score = alpha_beta(env_copy, SEARCH_DEPTH - 1, -sys.maxsize, sys.maxsize, player)
       if score > best_score:
          best_score = score
          best_move = move
-      # list[move] = value
-   # print("Before move return: ", list)
-   # print("argmax= ", np.argmax(list))
-   # return np.argmax(list)
    return best_move
 
-def student_move_random():
-   """
-   TODO: Implement your min-max alpha-beta pruning algorithm here.
-   Give it whatever input arguments you think are necessary
-   (and change where it is called).
-   The function should return a move from 0-6
-   """
-   return random.choice([0, 1, 2, 3, 4, 5, 6])
+def student_move():
+   return get_move(True)
+   
+   # return alpha_beta(env, SEARCH_DEPTH, -sys.maxsize, sys.maxsize, True)[0]
 
 def play_game(vs_server = False):
    """
@@ -271,6 +302,7 @@ def play_game(vs_server = False):
          result = res.json()['result']
          botmove = res.json()['botmove']
          state = np.array(res.json()['state'])
+         env.reset(board=state)
       else:
          if student_gets_move:
             # Execute your move

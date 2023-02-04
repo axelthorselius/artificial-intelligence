@@ -1,0 +1,1359 @@
+New game initiated, bot has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0 -1  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1 -1  0 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0 -1  0  1 -1  0 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1 -1  0  0]
+ [ 0 -1  0  1 -1  0 -1]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1 -1  0  0]
+ [ 0 -1  0  1 -1  0 -1]]
+
+New game initiated, you start. Make your move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1 -1  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1  1  0  0]
+ [ 0  0  0  1 -1  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  1  0  0]
+ [ 0  0  0 -1  1  0  0]
+ [-1  0  0  1 -1  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  1  0  0]
+ [ 0  0  0  1  1  0  0]
+ [ 0  0  0 -1  1  0  0]
+ [-1  0  0  1 -1 -1  0]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  1  0  0]
+ [ 0  0  0 -1  1  0  0]
+ [ 0  0  0  1  1  0  0]
+ [ 0  0  0 -1  1  0  0]
+ [-1  0  0  1 -1 -1  0]]
+
+New game initiated, you start. Make your move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0 -1]
+ [ 0  0  0  1  0  0 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0 -1]
+ [ 0  0  0  1 -1  0 -1]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0 -1]
+ [ 0  0  0  1 -1  0 -1]]
+
+New game initiated, bot has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0 -1  0 -1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0 -1  1 -1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0 -1 -1  0  0  0]
+ [ 0  0  1  1  0  0  0]
+ [ 0 -1  1 -1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0 -1  0  0  0  0]
+ [ 0  0 -1 -1  0  0  0]
+ [ 0  1  1  1  0  0  0]
+ [ 0 -1  1 -1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0 -1  0  0  0  0]
+ [ 0  1 -1 -1  0  0  0]
+ [ 0  1  1  1  0  0  0]
+ [ 0 -1  1 -1  0  0 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  1 -1  0  0  0  0]
+ [ 0  1 -1 -1  0  0  0]
+ [ 0  1  1  1  0  0  0]
+ [ 0 -1  1 -1 -1  0 -1]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  1 -1  0  0  0  0]
+ [ 0  1 -1 -1  0  0  0]
+ [ 0  1  1  1  1  0  0]
+ [ 0 -1  1 -1 -1  0 -1]]
+
+New game initiated, you start. Make your move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0 -1  0  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0 -1  0  1  0 -1  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0 -1  0  1  0 -1  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  1  0 -1  0  0  0]
+ [ 0 -1  0  1  0 -1 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  1  0  1  0  0  0]
+ [ 0  1  0 -1  0  0  0]
+ [ 0 -1 -1  1  0 -1 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  1  0  1  0  0  0]
+ [ 0  1  0  1  0  0  0]
+ [ 0  1  0 -1  0  0 -1]
+ [ 0 -1 -1  1  0 -1 -1]]
+
+The game has ended.
+You won!
+[[ 0  0  0 -1  0  0  0]
+ [ 0  1  0  1  0  0  0]
+ [ 0  1  0  1  0  0  0]
+ [ 0  1  0  1  0  0  0]
+ [ 0  1  0 -1  0  0 -1]
+ [ 0 -1 -1  1  0 -1 -1]]
+
+New game initiated, you start. Make your move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1 -1  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1  1  0  0]
+ [ 0 -1  0  1 -1  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  1  0  0]
+ [ 0 -1  0 -1  1  0  0]
+ [ 0 -1  0  1 -1  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  1  0  0]
+ [ 0  0  0  1  1  0  0]
+ [ 0 -1  0 -1  1  0  0]
+ [ 0 -1  0  1 -1 -1  0]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  1  0  0]
+ [ 0  0  0  0  1  0  0]
+ [ 0  0  0  1  1  0  0]
+ [ 0 -1  0 -1  1  0  0]
+ [ 0 -1  0  1 -1 -1  0]]
+
+New game initiated, you start. Make your move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0 -1 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0 -1]
+ [ 0  0  0  1  0 -1 -1]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0 -1]
+ [ 0  0  0  1  0 -1 -1]]
+
+New game initiated, bot has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [-1  0  0  0  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [-1  0  0  0  0  0  0]
+ [-1  0  0  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [-1  0  0  1  0  0  0]
+ [-1  0  0  1 -1  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [-1  0  0  1  0  0  0]
+ [-1  0  0  1 -1 -1  0]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [-1  0  0  1  0  0  0]
+ [-1  0  0  1 -1 -1  0]]
+
+New game initiated, you start. Make your move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0 -1  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  1 -1  0  0  0]
+ [ 0  0 -1  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  1  1  0  0  0]
+ [ 0  0  1 -1  0  0  0]
+ [-1  0 -1  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  1 -1  0  0  0]
+ [ 0  0  1  1  0  0  0]
+ [ 0  0  1 -1  0  0  0]
+ [-1  0 -1  1  0  0  0]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  1 -1  0  0  0]
+ [ 0  0  1 -1  0  0  0]
+ [ 0  0  1  1  0  0  0]
+ [ 0  0  1 -1  0  0  0]
+ [-1  0 -1  1  0  0  0]]
+
+New game initiated, you start. Make your move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0 -1  0  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0 -1  0  1  0  0  0]
+ [ 0 -1  0  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0 -1  0  1  0  0  0]
+ [ 0 -1  0  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  1  0  1  0  0  0]
+ [ 0 -1  0  1  0  0  0]
+ [ 0 -1 -1  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  1  0  1  0  0  0]
+ [ 0 -1  1  1  0  0  0]
+ [ 0 -1 -1  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  1  1  1  0  0  0]
+ [ 0 -1  1  1  0  0  0]
+ [ 0 -1 -1  1  0 -1  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  1  0 -1  0  0  0]
+ [ 0  1  1  1  0  0  0]
+ [ 0 -1  1  1  0  0  0]
+ [ 0 -1 -1  1 -1 -1  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  1  0 -1  0  0  0]
+ [ 0  1  1  1  0  0  0]
+ [ 0 -1  1  1  1  0  0]
+ [ 0 -1 -1  1 -1 -1 -1]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  1  0 -1  0  0  0]
+ [ 0  1  1  1  1  0  0]
+ [ 0 -1  1  1  1  0  0]
+ [ 0 -1 -1  1 -1 -1 -1]]
+
+New game initiated, bot has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [-1  0  0  0  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [-1  0  0  1 -1  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [-1  0  0  1 -1  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1 -1  0  0]
+ [ 0  0  0  1  1  0  0]
+ [-1  0  0  1 -1  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1 -1  0  0]
+ [ 0  0  0  1  1  0  0]
+ [-1 -1  0  1 -1  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1 -1  0  0]
+ [-1  1  0  1  1  0  0]
+ [-1 -1  0  1 -1  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  1  0  0]
+ [ 0  0  0 -1 -1  0  0]
+ [-1  1  0  1  1  0  0]
+ [-1 -1  0  1 -1  0 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  1  0  0]
+ [ 0  0  0  1  1  0  0]
+ [ 0  0  0 -1 -1  0  0]
+ [-1  1  0  1  1  0  0]
+ [-1 -1 -1  1 -1  0 -1]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  1  0  0]
+ [ 0  0  0  1  1  0  0]
+ [ 0  0  0 -1 -1  0  0]
+ [-1  1  1  1  1  0  0]
+ [-1 -1 -1  1 -1  0 -1]]
+
+New game initiated, bot has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0 -1  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0 -1  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1 -1 -1  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0 -1  1 -1 -1  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1  0 -1  0]
+ [ 0  0 -1  1 -1 -1  0]]
+
+The game has ended.
+You won!
+[[ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1  0 -1  0]
+ [ 0  0 -1  1 -1 -1  0]]
+
+New game initiated, bot has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0 -1  0  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  1  0  0  0  0]
+ [-1  0 -1  0  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  1 -1  0  0  0]
+ [-1  0 -1  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  1 -1  0  0  0]
+ [-1 -1 -1  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  1  1  0  0  0]
+ [-1  0  1 -1  0  0  0]
+ [-1 -1 -1  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  1  0  0  0  0]
+ [ 0  0  1  1  0  0  0]
+ [-1  0  1 -1  0  0  0]
+ [-1 -1 -1  1  0 -1  0]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  1  0  0  0  0]
+ [ 0  0  1  0  0  0  0]
+ [ 0  0  1  1  0  0  0]
+ [-1  0  1 -1  0  0  0]
+ [-1 -1 -1  1  0 -1  0]]
+
+New game initiated, bot has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0 -1  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0 -1  0  1 -1  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0 -1  0  1 -1 -1  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1 -1  0  0]
+ [ 0 -1  0  1 -1 -1  0]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1 -1  0  0]
+ [ 0 -1  0  1 -1 -1  0]]
+
+New game initiated, you start. Make your move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0 -1  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0 -1 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0 -1 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0 -1  0]
+ [ 0  0  0  1  0  1  0]
+ [ 0  0  0  1  0 -1 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0 -1  0]
+ [ 0  0  0  1  0  1  0]
+ [ 0  0  1  1 -1 -1 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0 -1  0]
+ [ 0  0  1  1  0  1  0]
+ [-1  0  1  1 -1 -1 -1]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0 -1  0]
+ [ 0  0  1  1  1  1  0]
+ [-1  0  1  1 -1 -1 -1]]
+
+New game initiated, bot has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0 -1  0  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  1  0  0  0  0]
+ [ 0  0 -1  0  0 -1  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  1  0  0  0  0]
+ [ 0 -1 -1  1  0 -1  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  1  1  0  0  0]
+ [ 0 -1 -1  1 -1 -1  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  1  1  1  0  0]
+ [ 0 -1 -1  1 -1 -1 -1]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  1  1  1  1  0  0]
+ [ 0 -1 -1  1 -1 -1 -1]]
+
+New game initiated, you start. Make your move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0 -1  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0 -1 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0 -1  0]
+ [ 0  0  0  1  0 -1 -1]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0 -1  0]
+ [ 0  0  0  1  0 -1 -1]]
+
+New game initiated, you start. Make your move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0 -1  0  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0 -1  0  1  0  0  0]
+ [ 0 -1  0  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0 -1  0  1  0  0  0]
+ [ 0 -1  0  1  0  0 -1]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0 -1  0  1  0  0  0]
+ [ 0 -1  0  1  0  0 -1]]
+
+New game initiated, you start. Make your move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0 -1  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0 -1 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0 -1 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0 -1  0]
+ [ 0  0  0  1  0  1  0]
+ [ 0  0  0  1  0 -1 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0 -1  0]
+ [ 0  0  0  1  0  1  0]
+ [ 0 -1  1  1  0 -1 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0 -1  0]
+ [ 0  0  1  1  0  1  0]
+ [ 0 -1  1  1 -1 -1 -1]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0 -1  0]
+ [ 0  0  1  1  1  1  0]
+ [ 0 -1  1  1 -1 -1 -1]]
+
+New game initiated, you start. Make your move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [-1  0  0  1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [-1  0  0  1  0  0 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [-1  0  0  1  0  0 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [-1  0 -1  1  0  0 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [-1  0  1  1  0  0  0]
+ [-1  0 -1  1  0  0 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  1  1  0  0  0]
+ [-1  0  1  1  0  0  0]
+ [-1  0 -1  1 -1  0 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  1  1  0  0  0]
+ [-1  0  1  1  1  0  0]
+ [-1  0 -1  1 -1 -1 -1]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1  0  0  0]
+ [ 0  0  1  1  0  0  0]
+ [-1  0  1  1  1  1  0]
+ [-1  0 -1  1 -1 -1 -1]]
+
+New game initiated, bot has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0 -1  0  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0 -1 -1  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0 -1  1  0  0  0]
+ [ 0  0  1 -1 -1  0  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0 -1  1  0  0  0]
+ [ 0  0  1 -1 -1 -1  0]]
+
+The game has ended.
+You lost!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0 -1  1  0  0  0]
+ [ 0  0  1 -1 -1 -1 -1]]
+
+New game initiated, you start. Make your move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0 -1  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1 -1 -1  0]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1 -1 -1 -1]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1 -1 -1 -1]]
+
+New game initiated, bot has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0 -1  0  1  0  0 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0 -1]
+ [ 0 -1  0  1  0  0 -1]]
+
+The server has made its move.
+Current state (1 are student discs, -1 are servers, 0 is empty): 
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0 -1]
+ [ 0 -1  0  1  0 -1 -1]]
+
+The game has ended.
+You won!
+[[ 0  0  0  0  0  0  0]
+ [ 0  0  0  0  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0  0]
+ [ 0  0  0  1  0  0 -1]
+ [ 0 -1  0  1  0 -1 -1]]
+
