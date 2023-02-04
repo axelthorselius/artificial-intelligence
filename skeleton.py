@@ -5,8 +5,13 @@ import numpy as np
 import argparse
 import sys
 from gym_connect_four import ConnectFourEnv
+import copy
 
 env: ConnectFourEnv = gym.make("ConnectFour-v0")
+
+ROW_LEN = 7
+COL_LEN = 6
+CONNECT_LEN = 4
 
 #SERVER_ADRESS = "http://localhost:8000/"
 SERVER_ADRESS = "https://vilde.cs.lth.se/edap01-4inarow/"
@@ -66,36 +71,139 @@ def opponents_move(env):
    env.change_player() # change back to student before returning
    return state, reward, done
 
-def alpha_beta():
-   return
+def alpha_beta(ab_board: ConnectFourEnv, depth: int, alpha: int, beta: int, maximizing_player: bool) -> int:
+   """
+   maximizing_player: True = player, False = comp
+   """
+   available_moves = list(ab_board.available_moves())
+   random.shuffle(available_moves)
+   if depth == 0 or ab_board.is_win_state():
+      return score(ab_board.board)
+   if maximizing_player:
+      value = -sys.maxsize
+      for move in available_moves:
+         child = copy.deepcopy(env)
+         child.change_player()
+         child.step(move)
+         value = max(value, alpha_beta(child, depth - 1, alpha, beta, False))
+         if value > beta:
+            break
+         alpha = max(alpha, value)
+      return value
+   else:
+      value = sys.maxsize
+      for move in available_moves:
+         child = copy.deepcopy(env)
+         child.change_player()
+         child.step(move)
+         value = min(value, alpha_beta(child, depth - 1, alpha, beta, True))
+         if value < alpha:
+            break
+         beta = min(beta, value)
+      return value
 
+# obselete for now
 def nbr_in_a_row(list: list, piece: int):
+   """
+   returns the longest 
+   """
    longest = 0
    temp = 0
+   end_index = 0
    for i in range(len(list)):
-      inarow = 0
       if list[i] == piece:
          temp += 1
       else:
          longest = max(longest, temp)
          temp = 0
+         end_index = i - 1
+      if (temp > longest):
+         longest = temp
+         # end_index = i
+      # longest = max(longest, temp)
 
+   # print(end_index)
    return longest
 
 def score_line(line: list):
+   # print(line)
+   player_pieces = line.count(1)
+   opponent_pieces = line.count(-1)
+   free_slots = CONNECT_LEN - player_pieces - opponent_pieces
+   # print("Player pieces: ", player_pieces)
+   # print("opponent pieces: ", opponent_pieces)
+   # print("free slots: ", free_slots)
+
+   if player_pieces == 4:
+      return sys.maxsize
+   if player_pieces == 3 and free_slots == 1:
+      return 100
+   if player_pieces == 2 and free_slots == 2:
+      return 20
+   if player_pieces == 1 and free_slots == 3:
+      return 5
+   if free_slots == 0:
+      return 0
+   if opponent_pieces == 1 and free_slots == 3:
+      return -4
+   if opponent_pieces == 2 and free_slots == 2:
+      return -19
+   if opponent_pieces == 3 and free_slots == 1:
+      return -99
+   if opponent_pieces == 4:
+      return -sys.maxsize + 1
+   # if one case is missed in code
+   
+   # print("case missed")
+   return 0
+
+
+def score(board):
    score = 0
 
+   # Horizontal lines
+   for row in range(COL_LEN):
+      row_list = board[row]
+      for col in range(ROW_LEN - 3):
+         score += score_line(list(row_list[col:col + CONNECT_LEN]))
+   
+   # Vertical lines
+   for col in range(ROW_LEN):
+      col_list = board[:, col]
+      for row in range(COL_LEN - 3):
+         score += score_line(list(col_list[row: row + CONNECT_LEN]))
+   
+   # Diagonal left-right down-up
+   for row in range(COL_LEN - 3):
+      for col in range(ROW_LEN - 3):
+         score += score_line(list(board[row + i][col + i] for i in range(CONNECT_LEN)))
+
+   # Diagonal left-right up-down
+   for row in range(COL_LEN - 3):
+      for col in range(ROW_LEN - 3):
+         score += score_line(list(board[row - i + 3][col + i] for i in range(CONNECT_LEN)))
+
+   # print("In score fun score = ", score)
    return score
 
-
-def score(board, col):
-   score = 0
-
-   return 0
-
 def student_move():
-
-   return 0
+   available_moves = env.available_moves()
+   # print("Available moves: ", available_moves)
+   # list = [-sys.maxsize]* 7
+   best_score = -sys.maxsize
+   best_move = 3
+   for move in available_moves:
+      env_copy = copy.deepcopy(env)
+      env_copy.step(move)
+      score = alpha_beta(env_copy, 3, -sys.maxsize, sys.maxsize, True)
+      if score > best_score:
+         best_score = score
+         best_move = move
+      # list[move] = value
+   # print("Before move return: ", list)
+   # print("argmax= ", np.argmax(list))
+   # return np.argmax(list)
+   return best_move
 
 def student_move_random():
    """
@@ -130,6 +238,7 @@ def play_game(vs_server = False):
       print(res.json()['msg'])
       botmove = res.json()['botmove']
       state = np.array(res.json()['state'])
+      env.reset(board=state)
    else:
       # reset game to starting state
       env.reset(board=None)
