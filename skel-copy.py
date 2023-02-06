@@ -104,10 +104,76 @@ def alpha_beta(ab_env: ConnectFourEnv, depth: int, alpha: int, beta: int, maximi
          beta = min(beta, value)
       return value
 
+# def alpha_beta(ab_env: ConnectFourEnv, depth: int, alpha: int, beta: int, maximizing_player: bool):
+#    """
+#    maximizing_player: True = player, False = comp
+#    """
+#    available_moves = list(ab_env.available_moves())
+#    # random.shuffle(available_moves)
+#    if depth == 0 or ab_env.is_win_state() or len(available_moves) == 0:
+#       return None, score(ab_env.board)
+#    if maximizing_player:
+#       value = -sys.maxsize
+#       move = available_moves[0]
+#       for m in available_moves:
+#          child = copy.deepcopy(ab_env)
+#          child.change_player()
+#          child.step(m)
+#          new_value = alpha_beta(child, depth - 1, alpha, beta, False)[1]
+#          if new_value > value:
+#             value = new_value
+#             move = m
+#          alpha = max(alpha, value)
+#          if value >= beta:
+#             break
+#       return move, value
+#    else:
+#       value = sys.maxsize
+#       move = available_moves[0]
+#       for m in available_moves:
+#          child = copy.deepcopy(ab_env)
+#          child.change_player()
+#          child.step(m)
+#          new_value = alpha_beta(child, depth - 1, alpha, beta, True)[1]
+#          if new_value < value:
+#             value = new_value
+#             move = m
+#          beta = min(beta, value)
+#          if value <= alpha:
+#             break
+#       return move, value
+
+# obselete for now
+def nbr_in_a_row(list: list, piece: int):
+   """
+   returns the longest 
+   """
+   longest = 0
+   temp = 0
+   end_index = 0
+   for i in range(len(list)):
+      if list[i] == piece:
+         temp += 1
+      else:
+         longest = max(longest, temp)
+         temp = 0
+         end_index = i - 1
+      if (temp > longest):
+         longest = temp
+         # end_index = i
+      # longest = max(longest, temp)
+
+   # print(end_index)
+   return longest
+
 def score_line(line: list):
+   # print(line)
    player_pieces = line.count(1)
    opponent_pieces = line.count(-1)
-   free_slots = line.count(0)
+   free_slots = CONNECT_LEN - player_pieces - opponent_pieces
+   # print("Player pieces: ", player_pieces)
+   # print("opponent pieces: ", opponent_pieces)
+   # print("free slots: ", free_slots)
 
    if player_pieces == 4:
       return sys.maxsize
@@ -127,7 +193,9 @@ def score_line(line: list):
       return -99
    if opponent_pieces == 4:
       return -sys.maxsize
-   # if a 4-segment has a combination of 1 and -1
+   # if one case is missed in code
+   
+   # print("case missed")
    return 0
 
 
@@ -174,6 +242,8 @@ def get_move(player: bool):
 
 def student_move():
    return get_move(True)
+   
+   # return alpha_beta(env, SEARCH_DEPTH, -sys.maxsize, sys.maxsize, True)[0]
 
 def play_game(vs_server = False):
    """
