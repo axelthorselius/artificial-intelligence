@@ -13,7 +13,7 @@ ROW_LEN = 7
 COL_LEN = 6
 CONNECT_LEN = 4
 
-SEARCH_DEPTH = 4
+SEARCH_DEPTH = 5
 
 #SERVER_ADRESS = "http://localhost:8000/"
 SERVER_ADRESS = "https://vilde.cs.lth.se/edap01-4inarow/"
@@ -87,7 +87,7 @@ def score_line(line: list):
    if player_pieces == 1 and free_slots == 3:
       return 5
    if free_slots == 0:
-      return 0
+      return 1
    if opponent_pieces == 1 and free_slots == 3:
       return -4
    if opponent_pieces == 2 and free_slots == 2:
@@ -99,48 +99,47 @@ def score_line(line: list):
    # if a 4-segment has a combination of 1 and -1
    return 0
 
-def score(board):
+def score(env):
    score = 0
 
    # Horizontal lines
    for row in range(COL_LEN):
-      row_list = board[row]
+      row_list = env[row]
       for col in range(ROW_LEN - 3):
          score += score_line(list(row_list[col:col + CONNECT_LEN]))
    
    # Vertical lines
    for col in range(ROW_LEN):
-      col_list = board[:, col]
+      col_list = env[:, col]
       for row in range(COL_LEN - 3):
          score += score_line(list(col_list[row: row + CONNECT_LEN]))
    
    # Diagonal left-right down-up
    for row in range(COL_LEN - 3):
       for col in range(ROW_LEN - 3):
-         score += score_line(list(board[row + i][col + i] for i in range(CONNECT_LEN)))
+         score += score_line(list(env[row + i][col + i] for i in range(CONNECT_LEN)))
 
    # Diagonal left-right up-down
    for row in range(COL_LEN - 3):
       for col in range(ROW_LEN - 3):
-         score += score_line(list(board[row - i + 3][col + i] for i in range(CONNECT_LEN)))
+         score += score_line(list(env[row - i + 3][col + i] for i in range(CONNECT_LEN)))
 
-   # print("In score fun score = ", score)
    return score
 
-def alpha_beta(ab_env: ConnectFourEnv, depth: int, alpha: int, beta: int, maximizing_player: bool) -> int:
-   """
-   maximizing_player: True = player, False = comp
-   """
-   available_moves = list(ab_env.available_moves())
-   if depth == 0 or ab_env.is_win_state() or len(available_moves) == 0:
-      return score(ab_env.board)
+def minimax(env: ConnectFourEnv,
+    depth: int, alpha: int, beta: int, maximizing_player: bool) -> int:
+   
+   available_moves = list(env.available_moves())
+   if depth == 0 or env.is_win_state() or len(available_moves) == 0:
+      return score(env.board)
    if maximizing_player:
       value = -sys.maxsize
       for move in available_moves:
-         child = copy.deepcopy(ab_env)
+         child = copy.deepcopy(env)
          child.change_player()
          child.step(move)
-         value = max(value, alpha_beta(child, depth - 1, alpha, beta, False))
+         value = max(value, minimax(
+            child, depth - 1, alpha, beta, False))
          if value >= beta:
             break
          alpha = max(alpha, value)
@@ -148,10 +147,11 @@ def alpha_beta(ab_env: ConnectFourEnv, depth: int, alpha: int, beta: int, maximi
    else:
       value = sys.maxsize
       for move in available_moves:
-         child = copy.deepcopy(ab_env)
+         child = copy.deepcopy(env)
          child.change_player()
          child.step(move)
-         value = min(value, alpha_beta(child, depth - 1, alpha, beta, True))
+         value = min(value, minimax(
+            child, depth - 1, alpha, beta, True))
          if value <= alpha:
             break
          beta = min(beta, value)
@@ -164,7 +164,7 @@ def student_move():
       env_copy = copy.deepcopy(env)
       env_copy.step(move)
       # Search depth -1 due to one layer search in this function
-      score = alpha_beta(env_copy, SEARCH_DEPTH - 1,
+      score = minimax(env_copy, SEARCH_DEPTH - 1,
                          -sys.maxsize, sys.maxsize, False)
       if score > best_score:
          best_score = score

@@ -13,7 +13,7 @@ ROW_LEN = 7
 COL_LEN = 6
 CONNECT_LEN = 4
 
-SEARCH_DEPTH = 4
+SEARCH_DEPTH = 5
 
 #SERVER_ADRESS = "http://localhost:8000/"
 SERVER_ADRESS = "https://vilde.cs.lth.se/edap01-4inarow/"
@@ -56,15 +56,15 @@ use your own algorithm for selecting actions too
 """
 def opponents_move(env):
    env.change_player() # change to oppoent
-   avmoves = env.available_moves()
-   if not avmoves:
+   available_moves = env.available_moves()
+   if not available_moves:
       env.change_player() # change back to student before returning
       return -1
 
    # TODO: Optional? change this to select actions with your policy too
    # that way you get way more interesting games, and you can see if starting
    # is enough to guarrantee a win
-   action = random.choice(list(avmoves))
+   action = other_move()
    # action = get_move(True)
    state, reward, done, _ = env.step(action)
    if done:
@@ -73,107 +73,10 @@ def opponents_move(env):
    env.change_player() # change back to student before returning
    return state, reward, done
 
-def alpha_beta(ab_env: ConnectFourEnv, depth: int, alpha: int, beta: int, maximizing_player: bool) -> int:
-   """
-   maximizing_player: True = player, False = comp
-   """
-   available_moves = list(ab_env.available_moves())
-   # random.shuffle(available_moves)
-   if depth == 0 or ab_env.is_win_state() or len(available_moves) == 0:
-      return score(ab_env.board)
-   if maximizing_player:
-      value = -sys.maxsize
-      for move in available_moves:
-         child = copy.deepcopy(ab_env)
-         child.change_player()
-         child.step(move)
-         value = max(value, alpha_beta(child, depth - 1, alpha, beta, False))
-         if value > beta:
-            break
-         alpha = max(alpha, value)
-      return value
-   else:
-      value = sys.maxsize
-      for move in available_moves:
-         child = copy.deepcopy(ab_env)
-         child.change_player()
-         child.step(move)
-         value = min(value, alpha_beta(child, depth - 1, alpha, beta, True))
-         if value < alpha:
-            break
-         beta = min(beta, value)
-      return value
-
-# def alpha_beta(ab_env: ConnectFourEnv, depth: int, alpha: int, beta: int, maximizing_player: bool):
-#    """
-#    maximizing_player: True = player, False = comp
-#    """
-#    available_moves = list(ab_env.available_moves())
-#    # random.shuffle(available_moves)
-#    if depth == 0 or ab_env.is_win_state() or len(available_moves) == 0:
-#       return None, score(ab_env.board)
-#    if maximizing_player:
-#       value = -sys.maxsize
-#       move = available_moves[0]
-#       for m in available_moves:
-#          child = copy.deepcopy(ab_env)
-#          child.change_player()
-#          child.step(m)
-#          new_value = alpha_beta(child, depth - 1, alpha, beta, False)[1]
-#          if new_value > value:
-#             value = new_value
-#             move = m
-#          alpha = max(alpha, value)
-#          if value >= beta:
-#             break
-#       return move, value
-#    else:
-#       value = sys.maxsize
-#       move = available_moves[0]
-#       for m in available_moves:
-#          child = copy.deepcopy(ab_env)
-#          child.change_player()
-#          child.step(m)
-#          new_value = alpha_beta(child, depth - 1, alpha, beta, True)[1]
-#          if new_value < value:
-#             value = new_value
-#             move = m
-#          beta = min(beta, value)
-#          if value <= alpha:
-#             break
-#       return move, value
-
-# obselete for now
-def nbr_in_a_row(list: list, piece: int):
-   """
-   returns the longest 
-   """
-   longest = 0
-   temp = 0
-   end_index = 0
-   for i in range(len(list)):
-      if list[i] == piece:
-         temp += 1
-      else:
-         longest = max(longest, temp)
-         temp = 0
-         end_index = i - 1
-      if (temp > longest):
-         longest = temp
-         # end_index = i
-      # longest = max(longest, temp)
-
-   # print(end_index)
-   return longest
-
 def score_line(line: list):
-   # print(line)
    player_pieces = line.count(1)
    opponent_pieces = line.count(-1)
-   free_slots = CONNECT_LEN - player_pieces - opponent_pieces
-   # print("Player pieces: ", player_pieces)
-   # print("opponent pieces: ", opponent_pieces)
-   # print("free slots: ", free_slots)
+   free_slots = line.count(0)
 
    if player_pieces == 4:
       return sys.maxsize
@@ -184,7 +87,7 @@ def score_line(line: list):
    if player_pieces == 1 and free_slots == 3:
       return 5
    if free_slots == 0:
-      return 0
+      return 1
    if opponent_pieces == 1 and free_slots == 3:
       return -4
    if opponent_pieces == 2 and free_slots == 2:
@@ -192,58 +95,95 @@ def score_line(line: list):
    if opponent_pieces == 3 and free_slots == 1:
       return -99
    if opponent_pieces == 4:
-      return -sys.maxsize
-   # if one case is missed in code
-   
-   # print("case missed")
+      return -(sys.maxsize - 1)
+   # if a 4-segment has a combination of 1 and -1
    return 0
 
-
-def score(board):
+def score(env):
    score = 0
 
    # Horizontal lines
    for row in range(COL_LEN):
-      row_list = board[row]
+      row_list = env[row]
       for col in range(ROW_LEN - 3):
          score += score_line(list(row_list[col:col + CONNECT_LEN]))
    
    # Vertical lines
    for col in range(ROW_LEN):
-      col_list = board[:, col]
+      col_list = env[:, col]
       for row in range(COL_LEN - 3):
          score += score_line(list(col_list[row: row + CONNECT_LEN]))
    
    # Diagonal left-right down-up
    for row in range(COL_LEN - 3):
       for col in range(ROW_LEN - 3):
-         score += score_line(list(board[row + i][col + i] for i in range(CONNECT_LEN)))
+         score += score_line(list(env[row + i][col + i] for i in range(CONNECT_LEN)))
 
    # Diagonal left-right up-down
    for row in range(COL_LEN - 3):
       for col in range(ROW_LEN - 3):
-         score += score_line(list(board[row - i + 3][col + i] for i in range(CONNECT_LEN)))
+         score += score_line(list(env[row - i + 3][col + i] for i in range(CONNECT_LEN)))
 
-   # print("In score fun score = ", score)
    return score
 
-def get_move(player: bool):
+def minimax(env: ConnectFourEnv,
+    depth: int, alpha: int, beta: int, maximizing_player: bool) -> int:
+   
+   available_moves = list(env.available_moves())
+   if depth == 0 or env.is_win_state() or len(available_moves) == 0:
+      return score(env.board)
+   if maximizing_player:
+      value = -sys.maxsize
+      for move in available_moves:
+         child = copy.deepcopy(env)
+         child.change_player()
+         child.step(move)
+         value = max(value, minimax(
+            child, depth - 1, alpha, beta, False))
+         if value >= beta:
+            break
+         alpha = max(alpha, value)
+      return value
+   else:
+      value = sys.maxsize
+      for move in available_moves:
+         child = copy.deepcopy(env)
+         child.change_player()
+         child.step(move)
+         value = min(value, minimax(
+            child, depth - 1, alpha, beta, True))
+         if value <= alpha:
+            break
+         beta = min(beta, value)
+      return value
+
+def other_move():
+   available_moves = env.available_moves()
+   best_score = sys.maxsize
+   for move in available_moves:
+      env_copy = copy.deepcopy(env)
+      env_copy.step(move)
+      # Search depth -1 due to one layer search in this function
+      score = minimax(env_copy, SEARCH_DEPTH - 1,
+                         -sys.maxsize, sys.maxsize, True)
+      if score < best_score:
+         best_score = score
+         best_move = move
+   return best_move
+
+def student_move():
    available_moves = env.available_moves()
    best_score = -sys.maxsize
    for move in available_moves:
       env_copy = copy.deepcopy(env)
       env_copy.step(move)
       # Search depth -1 due to one layer search in this function
-      score = alpha_beta(env_copy, SEARCH_DEPTH - 1, -sys.maxsize, sys.maxsize, player)
+      score = minimax(env_copy, SEARCH_DEPTH - 1,
+                         -sys.maxsize, sys.maxsize, False)
       if score > best_score:
          best_score = score
          best_move = move
    return best_move
-
-def student_move():
-   return get_move(True)
-   
-   # return alpha_beta(env, SEARCH_DEPTH, -sys.maxsize, sys.maxsize, True)[0]
 
 def play_game(vs_server = False):
    """
@@ -367,10 +307,6 @@ def main():
    if args.stats:
       stats = check_stats()
       print(stats)
-
-   # TODO: Run program with "--online" when you are ready to play against the server
-   # the results of your games there will be logged
-   # you can check your stats bu running the program with "--stats"
 
 if __name__ == "__main__":
     main()
