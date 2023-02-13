@@ -50,7 +50,7 @@ class Localizer:
         ret = None
         if self.__sense != None:
             ret = self.__sm.reading_to_position(self.__sense)
-        return ret;
+        return ret
 
     # get the currently most likely position, based on single most probable pose
     def most_likely_position(self) -> (int, int):
@@ -68,8 +68,9 @@ class Localizer:
     
     # add your simulator and filter here, for example    
         
-        #self.__rs = RobotSimAndFilter.RobotSim( ...)
-        #self.__HMM = RobotSimAndFilter.HMMFilter( ...)
+        self.__rs = RobotSimAndFilter.RobotSim(self.__tm, self.__sm)
+        self.__HMM = RobotSimAndFilter.HMMFilter(self.__sm, self.__om)
+        self.__Tt = self.__tm.get_T_transp()
     #
     #  Implement the update cycle:
     #  - robot moves one step, generates new state / pose
@@ -92,8 +93,9 @@ class Localizer:
     #
     def update(self) -> (bool, int, int, int, int, int, int, int, int, np.array(1)) :
         # update all the values to something sensible instead of just reading the old values...
-        # 
-        
+        # TODO
+        self.__trueState = self.__rs.move_robot(self.__trueState)
+        self.__sense = self.__rs.simulated_sensor_reading(self.__trueState)
         
         # this block can be kept as is
         ret = False  # in case the sensor reading is "nothing" this is kept...
@@ -103,12 +105,18 @@ class Localizer:
         if self.__sense != None:
             srX, srY = self.__sm.reading_to_position(self.__sense)
             ret = True
-            
+        
+        self.__fVec, self.__estimate = self.__HMM.forward_filter(self.__sense, self.__Tt, self.__fVec)
+        print(self.__estimate)
+        if self.__estimate == None:
+            print('estimate is None')
+        # self.__estimate = self.__sm.state_to_position(reading) # Why state and not reading?
         eX, eY = self.__estimate
         
         # this should be updated to spit out the actual error for this step
-        error = 10.0                
+        # use manhattan distance? Use error/success rates and average Manhattan distance to the true position as metrics. 
+        error = abs(tsX - eX) + abs(tsY - eY)
         
         # if you use the visualisation (dashboard), this return statement needs to be kept the same
         # or the visualisation needs to be adapted (your own risk!)
-        return ret, tsX, tsY, tsH, srX, srY, eX, eY, error, self.__fVec
+        return True, tsX, tsY, tsH, srX, srY, eX, eY, error, self.__fVec
