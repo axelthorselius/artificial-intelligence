@@ -391,11 +391,16 @@ class Dashboard:
                 pass
             else:
                 self.update_plt(plot, plotting)
-
+            
             if sensed:
                 print('true pose = <{}, {}, {}>, sensed position = <{}, {}>, guessed position = <{}, {}>'.format(trueR, trueC, trueH, sensedR, sensedC, guessedR, guessedC))
             else:
-                print('true pose = <{}, {}, {}>, sensed nothing'.format(trueR, trueC, trueH))
+                print('true pose = <{}, {}, {}>, sensed nothing, guessed position = <{}, {}>'.format(trueR, trueC, trueH, guessedR, guessedC))
+
+            # if sensed:
+            #     print('true pose = <{}, {}, {}>, sensed position = <{}, {}>, guessed position = <{}, {}>'.format(trueR, trueC, trueH, sensedR, sensedC, guessedR, guessedC))
+            # else:
+            #     print('true pose = <{}, {}, {}>, sensed nothing'.format(trueR, trueC, trueH))
                 
                 
             # update the total error and correct guesses with something useful for the visualisation

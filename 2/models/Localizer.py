@@ -119,4 +119,4 @@ class Localizer:
         
         # if you use the visualisation (dashboard), this return statement needs to be kept the same
         # or the visualisation needs to be adapted (your own risk!)
-        return True, tsX, tsY, tsH, srX, srY, eX, eY, error, self.__fVec
+        return ret, tsX, tsY, tsH, srX, srY, eX, eY, error, self.__fVec

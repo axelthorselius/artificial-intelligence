@@ -93,14 +93,18 @@ class RobotSim:
                     if abs(row_i) == 2 or abs(col_i) == 2:
                         prob_list.append(p_n_Ls2)
                         # p_none -= p_n_Ls2
+                    # surrounding fields
+                    # elif row_i == 1 or col_i == 1:
+                    #     prob_list.append(p_n_Ls)
+                    #     # p_none -= p_n_Ls
                     # true loc
                     elif row_i == 0 and col_i == 0:
                         prob_list.append(p_L)
                         # p_none -= p_L
-                    # surrounding fields
                     else:
                         prob_list.append(p_n_Ls)
-                        # p_none -= p_n_Ls
+                    # else:
+                    #     print("Something wrong in sim sensor")
         pos_list.append(None)
         prob_list.append(1 - sum(prob_list))
         choice = random.choices(pos_list, weights=prob_list, k=1)[0]
