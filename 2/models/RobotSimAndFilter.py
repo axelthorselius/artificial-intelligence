@@ -60,25 +60,12 @@ class RobotSim:
         return next_state
     
     def simulated_sensor_reading(self, ts) -> int:
-        # # p = prob
-        # # w = wall
-        # # nw = no wall
-        # # s = same heading
-        # # ns = not same heading
-        # p_s_nw = 0.7
-        # p_ns_nw = 0.3
-        # p_s_w = 0.0
-        # p_ns_w = 1.0
         p_L = 0.1
         p_n_Ls = 0.05
         p_n_Ls2 = 0.025
-        # p_none = 1 # for now. 'nothing' prob will be decreased
         
         row, col = self.__sm.state_to_position(ts)
         num_rows, num_cols, _ = self.__sm.get_grid_dimensions()
-
-        # for row_i in [-1, 1]:
-        #     for col_i in [-1, 1]:
 
         pos_list = []
         prob_list = []
