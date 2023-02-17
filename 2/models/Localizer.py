@@ -23,6 +23,10 @@ class Localizer:
 
         self.__tm = TransitionModel(self.__sm)
         self.__om = ObservationModel(self.__sm)
+        self.__correct = 0
+        self.__total = 0
+        self.__total_manhattan = 0.0
+
 
         # change in initialise in case you want to start out with something else
         # initialise can also be called again, if the filtering is to be reinitialised without a change in grid size
@@ -55,6 +59,12 @@ class Localizer:
     # get the currently most likely position, based on single most probable pose
     def most_likely_position(self) -> (int, int):
         return self.__estimate
+    
+    def get_correct(self):
+        return self.__correct
+    
+    def get_avg_manhattan(self):
+        return self.__total_manhattan / self.__total
 
     ################################### Here you need to really fill in stuff! ##################################
     # if you want to start with something else, change the initialisation here!
@@ -68,7 +78,7 @@ class Localizer:
     
     # add your simulator and filter here, for example    
         
-        self.__rs = RobotSimAndFilter.RobotSim(self.__tm, self.__sm)
+        self.__rs = RobotSimAndFilter.RobotSim(self.__tm, self.__sm, self.__om)
         self.__HMM = RobotSimAndFilter.HMMFilter(self.__sm, self.__om)
         self.__Tt = self.__tm.get_T_transp()
     #
@@ -95,7 +105,8 @@ class Localizer:
         # update all the values to something sensible instead of just reading the old values...
         # TODO
         self.__trueState = self.__rs.move_robot(self.__trueState)
-        self.__sense = self.__rs.simulated_sensor_reading(self.__trueState)
+        # self.__sense = self.__rs.simulated_sensor_reading(self.__trueState)
+        self.__sense = self.__rs.sense(self.__trueState)
         
         # this block can be kept as is
         ret = False  # in case the sensor reading is "nothing" this is kept...
@@ -106,6 +117,11 @@ class Localizer:
             srX, srY = self.__sm.reading_to_position(self.__sense)
             ret = True
         
+        # Test without filtering
+        # self.__estimate = self.__om.get_o_reading(self.__sense)
+        # self.__estimate = np.argmax(self.__estimate)
+        # self.__estimate = self.__sm.state_to_position(self.__estimate)
+
         self.__fVec, self.__estimate = self.__HMM.forward_filter(self.__sense, self.__Tt, self.__fVec)
         print(self.__estimate)
         if self.__estimate == None:
@@ -116,6 +132,11 @@ class Localizer:
         # this should be updated to spit out the actual error for this step
         # use manhattan distance? Use error/success rates and average Manhattan distance to the true position as metrics. 
         error = abs(tsX - eX) + abs(tsY - eY)
+        self.__total_manhattan += error
+        self.__total += 1
+
+        if error == 0:
+            self.__correct += 1
         
         # if you use the visualisation (dashboard), this return statement needs to be kept the same
         # or the visualisation needs to be adapted (your own risk!)

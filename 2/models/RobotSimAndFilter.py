@@ -8,106 +8,34 @@ from models import TransitionModel,ObservationModel,StateModel
 # Add your Robot Simulator here
 #
 class RobotSim:
-    def __init__(self, tm, sm):
+    def __init__(self, tm, sm, om):
         self.__tm = tm
         self.__sm = sm
+        self.__om = om
 
         print("RobotSim init")
     
-    def __available_headings(self, row, col) -> list:
-        # 0 = south
-        # 1 = east
-        # 2 = north
-        # 3 = west
-        headings = []
-        num_rows, num_cols, _ = self.__sm.get_grid_dimensions()
-        # row cant be > num_rows so no redundancy needed
-        if row > 0:
-            headings.append(2)
-        if col > 0:
-            headings.append(3)
-        if row < num_rows - 1:
-            headings.append(0)
-        if col < num_cols - 1:
-            headings.append(1)
-        return headings
-    
-    def __new_pos_from_heading(self, heading, row, col):
-        # current_row, current_col= self.__sm.state_to_position(self.__trueState)
-        if heading == 0:
-            row += 1
-        if heading == 1:
-            col += 1
-        if heading == 2:
-            row -= 1
-        if heading == 3:
-            col -= 1
-        return row, col
-            
-    # return the next state 
-    def move_robot(self, ts) -> int:
-        row, col = self.__sm.state_to_position(ts)
-        available_headings = self.__available_headings(row, col)
-        prob_list = []
-        for h in available_headings:
-            new_row, new_col = self.__new_pos_from_heading(h, row, col)
-            next_state = self.__sm.pose_to_state(new_row, new_col, h)
-            prob = self.__tm.get_T_ij(ts, next_state)
-            prob_list.append(prob)
-        heading = random.choices(available_headings, weights=prob_list, k=1)[0]
-        new_row, new_col = self.__new_pos_from_heading(heading, row, col)
-        next_state = self.__sm.pose_to_state(new_row, new_col, heading)
+    def move_robot(self, ts):
+        probs = self.__tm.get_T()
+        next_state = np.random.choice(self.__sm.get_num_of_states(), p=probs[ts])
         return next_state
-    
-    def simulated_sensor_reading(self, ts) -> int:
-        p_L = 0.1
-        p_n_Ls = 0.05
-        p_n_Ls2 = 0.025
-        
-        row, col = self.__sm.state_to_position(ts)
-        num_rows, num_cols, _ = self.__sm.get_grid_dimensions()
 
-        pos_list = []
-        prob_list = []
-        for row_i in range (-2, 2):
-            for col_i in range (-2, 2):
-                # real (actual) row and col
-                r_row = row + row_i
-                r_col = col + col_i
-                if r_row > 0 and r_row < num_rows - 1 and r_col > 0 and r_col < num_cols -1:
-                    pos_list.append((r_row, r_col))
-                    # secondary surrounding fields
-                    if abs(row_i) == 2 or abs(col_i) == 2:
-                        prob_list.append(p_n_Ls2)
-                        # p_none -= p_n_Ls2
-                    # surrounding fields
-                    # elif row_i == 1 or col_i == 1:
-                    #     prob_list.append(p_n_Ls)
-                    #     # p_none -= p_n_Ls
-                    # true loc
-                    elif row_i == 0 and col_i == 0:
-                        prob_list.append(p_L)
-                        # p_none -= p_L
-                    else:
-                        prob_list.append(p_n_Ls)
-                    # else:
-                    #     print("Something wrong in sim sensor")
-        pos_list.append(None)
-        prob_list.append(1 - sum(prob_list))
-        choice = random.choices(pos_list, weights=prob_list, k=1)[0]
-        if (choice != None):
-            new_row, new_col = choice
-            # does heading matter?
-            # sim_state = self.__sm.pose_to_state(new_row, new_col, 0)
-            sim_reading = self.__sm.position_to_reading(new_row, new_col)
-            return sim_reading
+    def sense(self, ts):
+        reading = self.__sm.state_to_reading(ts)
+        probs = self.__om.get_o_reading(reading)
+        probs = np.diag(probs)
         
-        return None
-                    
+        nbr_states = self.__sm.get_num_of_states()
+        none_prob = self.__om.get_o_reading_state(None, ts)
 
-#
-# Add your Filtering approach here (or within the Localiser, that is your choice!)
-#
+        if random.random() < none_prob:
+            return None
+        
+        probs = probs / np.sum(probs)
+        sense = np.random.choice(nbr_states, p=probs)
+        sense = self.__sm.state_to_reading(sense)
+        return sense
+        
 class HMMFilter:
     def __init__(self, sm, om):
         self.__sm = sm
@@ -118,15 +46,5 @@ class HMMFilter:
     def forward_filter(self, sense, Tt, f):
         o = self.__om.get_o_reading(sense)
         f = np.dot(o, np.dot(Tt, f))
-        # print('f')
-        # print(f)
-        # print('f/np.sum(f)')
-        # print(f/np.sum(f))
-        # print('np.sum(f)')
-        # print(np.sum(f))
-        # print('len(f)')
-        # print(len(f))
-        # print('np.argmax(f)')
-        # print(np.argmax(f))
-        best = self.__sm.state_to_position(np.argmax(f)) # Why state and not reading?
+        best = self.__sm.state_to_position(np.argmax(f))
         return f/np.sum(f), best
