@@ -21,19 +21,23 @@ class RobotSim:
         return next_state
 
     def sense(self, ts):
-        reading = self.__sm.state_to_reading(ts)
-        probs = self.__om.get_o_reading(reading)
-        probs = np.diag(probs)
-        
+        # reading = self.__sm.state_to_reading(ts)
+        # probs = self.__om.get_o_reading(reading)
         nbr_states = self.__sm.get_num_of_states()
+        nbr_readings = self.__sm.get_num_of_readings()
+        
+        probs = np.array([self.__om.get_o_reading_state(reading, ts) for reading in range(nbr_readings)])
+        
+        # probs = np.diag(probs)
+        
         none_prob = self.__om.get_o_reading_state(None, ts)
 
         if random.random() < none_prob:
             return None
         
         probs = probs / np.sum(probs)
-        sense = np.random.choice(nbr_states, p=probs)
-        sense = self.__sm.state_to_reading(sense)
+        sense = np.random.choice(nbr_readings, p=probs)
+        # sense = self.__sm.state_to_reading(sense)
         return sense
         
 class HMMFilter:

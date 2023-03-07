@@ -16,12 +16,12 @@ def sensedIsCorrect(trueR, trueC, sensedR, sensedC):
     total += 1
     return trueR == sensedR and trueC == sensedC
 
-for i in range(0, 100):
+for i in range(0, 1000):
     sensed, trueR, trueC, trueH, sensedR, sensedC, guessedR, guessedC, error, f = loc.update()
     if sensedIsCorrect(trueR, trueC, sensedR, sensedC):
         correct += 1
 
 
-    print("Sensed: ", sensed, "True: ", trueR, trueC, trueH, "Sensed: ", sensedR, sensedC, "Guessed: ", guessedR, guessedC, "Error: ", error)
+    # print("Sensed: ", sensed, "True: ", trueR, trueC, trueH, "Sensed: ", sensedR, sensedC, "Guessed: ", guessedR, guessedC, "Error: ", error)
 
 print("Correct: ", loc.get_correct(), "Avg Manhattan: ", loc.get_avg_manhattan(), "Correct Sensed", correct/total)
